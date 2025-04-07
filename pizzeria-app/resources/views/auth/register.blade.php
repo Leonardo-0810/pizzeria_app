@@ -22,6 +22,8 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
         </div>
 
+
+
         <!-- Contraseña -->
         <div class="mb-3">
             <label for="password" class="form-label">🔒 Contraseña</label>
