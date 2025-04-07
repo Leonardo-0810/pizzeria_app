@@ -31,7 +31,7 @@
 
        
         <main class="container">
-            {{ $slot }}
+        @yield('content')
         </main>
     </div>
 </body>
