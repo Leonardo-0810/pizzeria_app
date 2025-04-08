@@ -24,6 +24,12 @@
                         </x-nav-link>
                 </div>
 
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')" class="text-white hover:text-yellow-300">
+                        💻 {{ __('Empleados') }}
+                        </x-nav-link>
+                </div>
+
             </div>
 
             <!-- Settings Dropdown -->
