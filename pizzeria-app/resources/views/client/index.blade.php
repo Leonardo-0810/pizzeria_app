@@ -48,7 +48,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $client->users_id }}</td>
+										<td >{{ $client->user->name }}</td>
 										<td >{{ $client->address }}</td>
 										<td >{{ $client->phone }}</td>
 

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ClientRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class ClientController extends Controller
 {
@@ -28,8 +29,9 @@ class ClientController extends Controller
     public function create(): View
     {
         $client = new Client();
+        $users = User::all();
 
-        return view('client.create', compact('client'));
+        return view('client.create', compact('client', 'users'));
     }
 
     /**
@@ -59,8 +61,9 @@ class ClientController extends Controller
     public function edit($id): View
     {
         $client = Client::find($id);
+        $users = User::all();
 
-        return view('client.edit', compact('client'));
+        return view('client.edit', compact('client', 'users'));
     }
 
     /**

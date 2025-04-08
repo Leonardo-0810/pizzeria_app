@@ -3,8 +3,17 @@
         
         <div class="form-group mb-2 mb20">
             <label for="users_id" class="form-label">{{ __('Users Id') }}</label>
-            <input type="text" name="users_id" class="form-control @error('users_id') is-invalid @enderror" value="{{ old('users_id', $client?->users_id) }}" id="users_id" placeholder="Users Id">
-            {!! $errors->first('users_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <select name="users_id" id="users_id" class="form-control @error('users_id') is-invalid @enderror" required>
+        <option value="">Seleccione un usuario</option>
+        @foreach ($users as $user)
+            <option value="{{ $user->id }}" {{ old('users_id', $client->users_id ?? '') == $user->id ? 'selected' : '' }}>
+                {{ $user->name }}
+            </option>
+        @endforeach
+    </select>
+    @error('users_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
         </div>
         <div class="form-group mb-2 mb20">
             <label for="address" class="form-label">{{ __('Address') }}</label>
