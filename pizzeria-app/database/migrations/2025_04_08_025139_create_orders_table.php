@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('client_id')->constrained();
+            $table->foreignId('branch_id')->constrained();
+            $table->decimal('total_price', 8, 2);
+            $table->enum('status', ['pendiente', 'en_preparacion', 'listo', 'entregado']);
+            $table->enum('delivery_type', ['en_local', 'a_domicilio']);
+            $table->foreignId('delivery_person_id')->nullable()->constrained('employees');
             $table->timestamps();
         });
     }
