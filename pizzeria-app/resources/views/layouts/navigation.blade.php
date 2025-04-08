@@ -17,6 +17,13 @@
                         🍕 {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('clients.index')" :active="request()->routeIs('clients.index')" class="text-white hover:text-yellow-300">
+                        💼 {{ __('Clientes') }}
+                        </x-nav-link>
+                </div>
+
             </div>
 
             <!-- Settings Dropdown -->
