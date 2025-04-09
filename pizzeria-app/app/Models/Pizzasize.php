@@ -2,20 +2,18 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Pizzasize extends Model
 {
+
     use HasFactory;
 
     protected $fillable = [
-        'client_id',
-        'branch_id',
-        'total_price',
-        'status',
-        'delivery_type',
-        'delivery_person_id',
-        'total_price'
+        'pizza_id',
+        'size',
+        'price',
     ];
 }
