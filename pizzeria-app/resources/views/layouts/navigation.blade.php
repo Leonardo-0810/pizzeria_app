@@ -12,15 +12,12 @@
                 </div>
 
                 <!-- Navigation Links -->
-                @if (Auth::check() && Auth::user()->role === 'cliente')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-white hover:text-yellow-300">
                         🍕 {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-                @endif
 
-                @if (Auth::check() && Auth::user()->role === 'administrador')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('clients.index')" :active="request()->routeIs('clients.index')" class="text-white hover:text-yellow-300">
                         💼 {{ __('Clientes') }}
@@ -32,12 +29,10 @@
                         💻 {{ __('Empleados') }}
                         </x-nav-link>
                 </div>
-                @endif
 
             </div>
 
             <!-- Settings Dropdown -->
-            @if (Auth::check())
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -65,7 +60,6 @@
                     </x-slot>
                 </x-dropdown>
             </div>
-            @endif
 
             <!-- Hamburger Menu -->
             <div class="-me-2 flex items-center sm:hidden">
@@ -82,14 +76,13 @@
     </div>
 
     <!-- Responsive Navigation -->
-     
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden bg-red-700">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-white hover:text-yellow-300">
                 🍕 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
-        @auth
+
         <div class="pt-4 pb-1 border-t border-red-500">
             <div class="px-4 text-white">
                 <div class="font-medium text-base">{{ Auth::user()->name }}</div>
@@ -110,6 +103,5 @@
                 </form>
             </div>
         </div>
-        @endauth
     </div>
 </nav>
