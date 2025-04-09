@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -21,9 +21,21 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('clients', ClientController::class);
 
-    Route::resource('employees', EmployeeController::class);
+    Route::resource('employees', EmployeeController::class); 
+
+
 
     
+    Route::middleware(['auth', 'role:administrador'])->group(function () {
+        Route::resource('employees', EmployeeController::class);
+        Route::resource('clients', ClientController::class);
+    });
+    
+    Route::middleware(['auth', 'role:cliente'])->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('dashboard');
+    });
 });
 
 require __DIR__.'/auth.php';
