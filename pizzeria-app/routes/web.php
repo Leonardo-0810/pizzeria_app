@@ -8,6 +8,9 @@ use App\Http\Controllers\supplierController;
 use App\Http\Controllers\PizzaingredientController;
 use App\Http\Controllers\PizzarawmaterialController;
 use App\Http\Controllers\RawmaterialController;
+use App\Http\Controllers\ExtraIngredientController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PizzaSizeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,9 +35,14 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('pizzarawmaterials', PizzarawmaterialController::class);
 
-    
+
     Route::resource('suppliers', SupplierController::class);
     Route::resource('rawmaterials', RawmaterialController::class);
+    Route::resource('orders', OrderController::class);
+    Route::resource('pizza-sizes', PizzaSizeController::class);
+    Route::resource('extra-ingredients', ExtraIngredientController::class);
 });
 
-require __DIR__.'/auth.php';
+
+
+require __DIR__ . '/auth.php';

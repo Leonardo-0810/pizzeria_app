@@ -2,18 +2,50 @@
 
 namespace App\Models;
 
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pizzasize extends Model
+/**
+ * Class PizzaSize
+ *
+ * @property $id
+ * @property $pizzas_id
+ * @property $size
+ * @property $price
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property Pizza $pizza
+ * @property OrderPizza[] $orderPizzas
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
+class PizzaSize extends Model
 {
+    
+    protected $perPage = 20;
 
-    use HasFactory;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = ['pizzas_id', 'size', 'price'];
 
-    protected $fillable = [
-        'pizzas_id',
-        'size',
-        'price',
-    ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function pizza()
+    {
+        return $this->belongsTo(\App\Models\Pizza::class, 'pizzas_id', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function orderPizzas()
+    {
+        return $this->hasMany(\App\Models\OrderPizza::class, 'id', 'pizza_sizes_id');
+    }
+    
 }
