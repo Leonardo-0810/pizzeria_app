@@ -23,6 +23,10 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('employees', EmployeeController::class);
 
+    Route::resource('pizzaingredients', PizzaingredientController::class);
+
+    Route::resource('pizzarawmaterials', PizzarawmaterialController::class);
+
     
 });
 
