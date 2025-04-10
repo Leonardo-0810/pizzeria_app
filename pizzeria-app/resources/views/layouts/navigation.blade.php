@@ -29,6 +29,70 @@
                         💻 {{ __('Empleados') }}
                         </x-nav-link>
                 </div>
+                
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('pizzas.index')" :active="request()->routeIs('pizzas.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Pizzas') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('purchases.index')" :active="request()->routeIs('purchases.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Compras') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('ingredients.index')" :active="request()->routeIs('ingredients.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Ingredientes') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('rawmaterials.index')" :active="request()->routeIs('rawmaterials.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Material crudo') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('pizzaingredients.index')" :active="request()->routeIs('pizzaingredients.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Ingredient pizza') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('pizzarawmaterials.index')" :active="request()->routeIs('pizzarawmaterials.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Material crudo pizza') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('suppliers.index')" :active="request()->routeIs('suppliers.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Provedores') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Ordenes') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('pizza-sizes.index')" :active="request()->routeIs('pizza-sizes.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Tamaño pizza') }}
+                        </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('extra-ingredients.index')" :active="request()->routeIs('extra-ingredients.index')" class="text-white hover:text-yellow-300">
+                        {{ __('Ingredientes extra') }}
+                        </x-nav-link>
+                </div>
+
+                
+
+                
 
             </div>
 
