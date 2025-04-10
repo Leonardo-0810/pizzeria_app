@@ -3,7 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ExtraIngredientController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PizzaSizeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,8 +25,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('clients', ClientController::class);
 
     Route::resource('employees', EmployeeController::class);
+
+    Route::resource('orders', OrderController::class);
+    Route::resource('pizza-sizes', PizzaSizeController::class);
+    Route::resource('extra-ingredients', ExtraIngredientController::class);
 });
 
-Route::resource('orders', OrderController::class);
+
 
 require __DIR__ . '/auth.php';
