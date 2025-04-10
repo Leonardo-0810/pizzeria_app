@@ -5,6 +5,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\IngredientController; 
+use App\Http\Controllers\RawmaterialController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('pizzas', PizzaController::class);
     Route::resource('clients', ClientController::class);
     Route::resource('ingredients', IngredientController::class);
+    Route::resource('rawmaterials', RawmaterialController::class);
     Route::resource('employees', EmployeeController::class);
 
     
