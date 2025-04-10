@@ -7,34 +7,55 @@
         </a>
 
         <!-- Botón hamburguesa -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Contenido colapsable -->
+        <!-- Contenido -->
         <div class="collapse navbar-collapse" id="navbarContent">
-            <!-- Dropdown único de navegación -->
+            <!-- Dropdown único -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="menuDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         📂 Menú
                     </a>
                     <ul class="dropdown-menu">
+                        <li><h6 class="dropdown-header">📊 Panel</h6></li>
                         <li><a class="dropdown-item" href="{{ route('dashboard') }}">🍕 Dashboard</a></li>
-                        <li><a class="dropdown-item" href="{{ route('clients.index') }}">💼 Clientes</a></li>
-                        <li><a class="dropdown-item" href="{{ route('employees.index') }}">💻 Empleados</a></li>
-                        <li><a class="dropdown-item" href="{{ route('orders.index') }}">📦 Órdenes</a></li>
-                        <li><a class="dropdown-item" href="{{ route('suppliers.index') }}">🏢 Proveedores</a></li>
-                        <li><a class="dropdown-item" href="{{ route('purchases.index') }}">🛒 Compras</a></li>
+
                         <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">🧾 Ventas</h6></li>
+                        <li><a class="dropdown-item" href="{{ route('clients.index') }}">💼 Clientes</a></li>
+                        <li><a class="dropdown-item" href="{{ route('orders.index') }}">📦 Órdenes</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">🏭 Producción</h6></li>
                         <li><a class="dropdown-item" href="{{ route('pizzas.index') }}">🍕 Pizzas</a></li>
                         <li><a class="dropdown-item" href="{{ route('pizza-sizes.index') }}">📏 Tamaños Pizza</a></li>
                         <li><a class="dropdown-item" href="{{ route('ingredients.index') }}">🧂 Ingredientes</a></li>
                         <li><a class="dropdown-item" href="{{ route('extra-ingredients.index') }}">➕ Ingredientes Extra</a></li>
+                        <li><a class="dropdown-item" href="{{ route('pizzaingredients.index') }}">🧂🍕 Pizza Ingredientes</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">🏗️ Materia Prima</h6></li>
                         <li><a class="dropdown-item" href="{{ route('rawmaterials.index') }}">⚙️ Material Crudo</a></li>
-                        <li><a class="dropdown-item" href="{{ route('pizzaingredients.index') }}">🍕🧂 Pizza Ingredientes</a></li>
-                        <li><a class="dropdown-item" href="{{ route('pizzarawmaterials.index') }}">🍕⚙️ Pizza Crudo</a></li>
+                        <li><a class="dropdown-item" href="{{ route('pizzarawmaterials.index') }}">⚙️🍕 Pizza Crudo</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">📦 Compras</h6></li>
+                        <li><a class="dropdown-item" href="{{ route('suppliers.index') }}">🏢 Proveedores</a></li>
+                        <li><a class="dropdown-item" href="{{ route('purchases.index') }}">🛒 Compras</a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><h6 class="dropdown-header">👥 Personal</h6></li>
+                        <li><a class="dropdown-item" href="{{ route('employees.index') }}">💻 Empleados</a></li>
                     </ul>
                 </li>
             </ul>
@@ -42,7 +63,8 @@
             <!-- Usuario -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="userDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
