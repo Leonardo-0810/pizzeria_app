@@ -13,7 +13,7 @@
         </button>
 
         <!-- Contenido -->
-        <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="navbar-collapse" id="navbarContent">
             <!-- Dropdown único -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item dropdown">
