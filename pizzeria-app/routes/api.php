@@ -6,6 +6,10 @@ use App\Http\Controllers\api\ClientController;
 use App\Http\Controllers\api\UserController;
 use App\Models\User;
 
+
+use App\Http\Controllers\api\Auth\RegisteredUserController;
+use App\Http\Controllers\api\Auth\AuthenticatedSessionController;
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
@@ -15,6 +19,9 @@ Route::get('/users', function () {
 });
 
 
+Route::post('/register', [RegisteredUserController::class, 'store']);
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth:sanctum');
 
 
 Route::apiResource('users', UserController::class);
