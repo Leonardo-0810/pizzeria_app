@@ -9,6 +9,7 @@ use App\Models\User;
 
 use App\Http\Controllers\api\Auth\RegisteredUserController;
 use App\Http\Controllers\api\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Api\PizzaSizeController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -26,3 +27,4 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->midd
 
 Route::apiResource('users', UserController::class);
 Route::resource('clients', ClientController::class);
+Route::apiResource('pizza-sizes', PizzaSizeController::class);
