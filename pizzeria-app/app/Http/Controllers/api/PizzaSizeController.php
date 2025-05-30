@@ -10,13 +10,13 @@ class PizzaSizeController extends Controller
 {
     public function index()
     {
-        return response()->json(PizzaSize::with('pizza')->paginate(20));
+        // Ya no usamos with('pizza') porque no hay relación
+        return response()->json(PizzaSize::paginate(20));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'pizzas_id' => 'required|exists:pizzas,id',
             'size' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
         ]);
@@ -28,7 +28,8 @@ class PizzaSizeController extends Controller
 
     public function show($id)
     {
-        $pizzaSize = PizzaSize::with('pizza')->findOrFail($id);
+        // Ya no usamos with('pizza') porque no hay relación
+        $pizzaSize = PizzaSize::findOrFail($id);
         return response()->json($pizzaSize);
     }
 
@@ -37,7 +38,7 @@ class PizzaSizeController extends Controller
         $pizzaSize = PizzaSize::findOrFail($id);
 
         $request->validate([
-            'pizzas_id' => 'sometimes|exists:pizzas,id',
+            'pizzas_id' => 'sometimes|integer', // ✅ Quitamos exists
             'size' => 'sometimes|string|max:255',
             'price' => 'sometimes|numeric|min:0',
         ]);

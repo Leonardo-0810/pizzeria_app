@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('pizza_sizes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pizzas_id')->constrained();
             $table->enum('size', ['pequeña', 'mediana', 'grande']);
             $table->decimal('price', 8, 2);
             $table->timestamps();
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pizzasizes');
+        Schema::dropIfExists('pizza_sizes');
     }
 };

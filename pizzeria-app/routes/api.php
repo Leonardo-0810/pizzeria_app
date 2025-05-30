@@ -9,7 +9,7 @@ use App\Models\User;
 
 use App\Http\Controllers\api\Auth\RegisteredUserController;
 use App\Http\Controllers\api\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Api\PizzaSizeController;
+use App\Http\Controllers\api\PizzaSizeController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();

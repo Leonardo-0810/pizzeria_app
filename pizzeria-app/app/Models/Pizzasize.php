@@ -35,10 +35,6 @@ class PizzaSize extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function pizza()
-    {
-        return $this->belongsTo(\App\Models\Pizza::class, 'pizzas_id', 'id');
-    }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
